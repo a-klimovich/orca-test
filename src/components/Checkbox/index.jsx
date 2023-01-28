@@ -3,12 +3,12 @@ import {CheckboxContainer, HiddenCheckbox, StyledCheckbox, LabelStyled} from './
 import { ReactComponent as Checkmark } from '../../assets/checkmark-arrow.svg'
 
 const Checkbox = (props) => {
-  const { className, checked, labelText, ...rest } = props;
+  const { checked, labelText, onChange } = props;
 
   return (
     <LabelStyled>
-      <CheckboxContainer className={className} {...rest}>
-        <HiddenCheckbox checked={checked} />
+      <CheckboxContainer>
+        <HiddenCheckbox onChange={onChange} checked={checked} />
 
         <StyledCheckbox checked={checked}>
           <Checkmark />

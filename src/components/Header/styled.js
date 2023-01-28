@@ -5,6 +5,7 @@ export const HeaderStyled = styled.div`
   justify-content: space-between;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--gray);
+  margin-bottom: 32px;
 
   img {
     max-width: 94px;

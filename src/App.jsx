@@ -1,7 +1,7 @@
 import { GlobalStyle, Container, Screen } from "./styles/global"
 
-import TableModule from "./modules/Cards"
-import CardsModule from "./modules/Table"
+import TableModule from "./modules/Table"
+import CardsModule from "./modules/Cards"
 
 
 function App() {
