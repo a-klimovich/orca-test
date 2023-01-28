@@ -1,21 +1,20 @@
 import React from 'react'
-import {CheckboxContainer, Icon, HiddenCheckbox, StyledCheckbox, LabelStyled} from './styled'
+import {CheckboxContainer, HiddenCheckbox, StyledCheckbox, LabelStyled} from './styled'
+import { ReactComponent as Checkmark } from '../../assets/checkmark-arrow.svg'
 
 const Checkbox = (props) => {
   const { className, checked, labelText, ...rest } = props;
 
   return (
     <LabelStyled>
-      <CheckboxContainer className={className}>
-        <HiddenCheckbox checked={checked} {...rest} />
+      <CheckboxContainer className={className} {...rest}>
+        <HiddenCheckbox checked={checked} />
 
         <StyledCheckbox checked={checked}>
-          <Icon viewBox="0 0 24 24">
-            <polyline points="20 6 9 17 4 12" />
-          </Icon>
+          <Checkmark />
         </StyledCheckbox>
       </CheckboxContainer>
-      
+
       <span style={{ marginLeft: 8 }}>{labelText}</span>
     </LabelStyled>
   )

@@ -18,6 +18,7 @@ const Header = () => {
           onChange={() => setChecked(!checked)}
           labelText="Show additional items"
         />
+        
         <div>2</div>
         <div>3</div>
         <div>4</div>
