@@ -1,6 +1,6 @@
 import Header from "../../components/Header"
 
-const TableContainer = () => {
+const CardsModule = () => {
   return ( 
     <>
       <Header />
@@ -8,4 +8,4 @@ const TableContainer = () => {
   );
 }
  
-export default TableContainer;
+export default CardsModule;

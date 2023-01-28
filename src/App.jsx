@@ -1,7 +1,8 @@
-import CardsContainer from "./containers/Cards"
-import TableContainer from "./containers/Table"
-
 import { GlobalStyle, Container, Screen } from "./styles/global"
+
+import TableModule from "./modules/Cards"
+import CardsModule from "./modules/Table"
+
 
 function App() {
   return (
@@ -9,12 +10,12 @@ function App() {
       <GlobalStyle />
       <Screen>
         <Container>
-          <CardsContainer />
+          <TableModule />
         </Container>
       </Screen>
       <Screen>
         <Container>
-          <TableContainer />
+          <CardsModule />
         </Container>
       </Screen>
     </>
