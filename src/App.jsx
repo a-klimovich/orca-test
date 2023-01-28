@@ -1,12 +1,24 @@
-import Header from './components/Header';
-import { Container } from './styles/Container.styled'
+import CardsContainer from "./containers/Cards"
+import TableContainer from "./containers/Table"
+
+import { GlobalStyle, Container, Screen } from "./styles/global"
 
 function App() {
   return (
-    <Container>
-      <Header />
-    </Container>
-  )
+    <>
+      <GlobalStyle />
+      <Screen>
+        <Container>
+          <CardsContainer />
+        </Container>
+      </Screen>
+      <Screen>
+        <Container>
+          <TableContainer />
+        </Container>
+      </Screen>
+    </>
+  );
 }
 
-export default App
+export default App;
