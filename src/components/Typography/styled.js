@@ -28,10 +28,11 @@ const colors = {
 };
 
 const Base = styled.div`
-  white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}` : "fit-content")};
+  word-break: ${({ wordBreakAll }) => (wordBreakAll ? "break-all" : "normal")};
+  white-space: ${({ whiteSpaceNormal }) => (whiteSpaceNormal ? "normal" : "nowrap")};
 
   ${({ color }) => colors[color]};
 
@@ -40,10 +41,7 @@ const Base = styled.div`
   }
 `;
 
-export const TextStyled = styled(Base)`
-  word-break: ${({ breakWords }) => (breakWords ? "break-all" : "normal")};
-  white-space: ${({ breakWords }) => (breakWords ? "normal" : "nowrap")};
-`;
+export const TextStyled = styled(Base)``;
 
 export const LinkStyled = styled(Base)`
   display: inline-flex;

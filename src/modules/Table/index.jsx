@@ -4,7 +4,6 @@ import Table from "../../components/Table";
 import { Status } from "../../components/Status";
 import { ExtandedAdditionalInfo } from "../../components/ExtandedAdditionalInfo";
 import Typography from "../../components/Typography";
-import { useState } from "react";
 
 const { Copyable, Link, Text } = Typography;
 
@@ -52,7 +51,7 @@ const columns = [
 
 const data = [
   {
-    status: "danger",
+    status: "High",
     name: "Luctus",
     file: {
       name: "Luctus.ppt",
@@ -65,7 +64,7 @@ const data = [
     additionalInfo: info
   },
   {
-    status: "warning",
+    status: "Medium",
     name: "Ante",
     file: {
       name: "Ante.tiff",
@@ -78,7 +77,7 @@ const data = [
     additionalInfo: info
   },
   {
-    status: "warning",
+    status: "Medium",
     name: "ElitProinInterdum",
     file: {
       name: "ElitProinInterdum.xls",
@@ -91,7 +90,7 @@ const data = [
     additionalInfo: info
   },
   {
-    status: "caution",
+    status: "Low",
     name: "Non",
     file: {
       name: "Non.ppt",

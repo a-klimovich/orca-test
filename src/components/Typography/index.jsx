@@ -7,10 +7,10 @@ import { ReactComponent as LinkSVG } from "../../assets/link.svg";
 export const Typography = {};
 
 export const Text = (props) => {
-  const { children, sufix, maxWidth, breakAll = false } = props;
+  const { children, sufix, maxWidth, ...rest } = props;
 
   return (
-    <TextStyled breakWords={breakAll} maxWidth={maxWidth}>
+    <TextStyled {...rest} maxWidth={maxWidth}>
       {children}
       {sufix && <span>{` ${sufix}`}</span>}
     </TextStyled>
@@ -18,14 +18,12 @@ export const Text = (props) => {
 };
 
 export const Copyable = (props) => {
-  const { children, sufix = false, maxWidth } = props;
+  const { children, sufix = false, ...rest } = props;
 
-  const handleTextCtrlC = (event, value) => {
-    return navigator.clipboard.writeText(value);
-  };
+  const handleTextCtrlC = (value) => navigator.clipboard.writeText(value);
 
   return (
-    <CopyableStyled maxWidth={maxWidth}>
+    <CopyableStyled {...rest}>
       {children}
       {sufix && (
         <button type='button' onClick={() => handleTextCtrlC(children)}>
@@ -37,16 +35,30 @@ export const Copyable = (props) => {
 };
 
 export const Link = (props) => {
-  const { prefix, children, sufix, maxWidth, ...rest } = props;
+  const { 
+    prefix, 
+    children, 
+    sufix, 
+    maxWidth, 
+    whiteSpaceNormal, 
+    wordBreakAll, 
+    ...rest
+  } = props;
 
   return (
-    <LinkStyled maxWidth={maxWidth}>
+    <LinkStyled 
+      maxWidth={maxWidth} 
+      whiteSpaceNormal={whiteSpaceNormal} 
+      wordBreakAll={wordBreakAll}
+    >
       {prefix && (
         <span className='prefix'>
           <TragetSVG />
         </span>
       )}
+
       <a {...rest}>{children}</a>
+
       {sufix && (
         <span className='sufix'>
           <LinkSVG />

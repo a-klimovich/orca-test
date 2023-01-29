@@ -6,13 +6,13 @@ import { ReactComponent as StatusCautionSVG } from "../../assets/warning-caution
 
 const getCurrentStatusIcon = (status) => {
   switch (status) {
-    case 'danger':
+    case 'High':
       return <StatusDangerSVG />
-      
-    case 'warning':
+
+    case 'Medium':
       return <StatusWarninSVG />
       
-    case 'caution':
+    case 'Low':
       return <StatusCautionSVG />
   
     default:

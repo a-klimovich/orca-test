@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ReactComponent as TypeViewRowSVG } from '../../assets/items-row.svg';
 import { ReactComponent as TypeViewBoxSVG } from '../../assets/items-block.svg';
 
-const SwitchContainer = styled.label`
+export const SwitchContainer = styled.label`
   display: inline-block;
   position: relative;
   width: 60px;
@@ -14,7 +14,7 @@ const SwitchContainer = styled.label`
   cursor: pointer;
 `;
 
-const SwitchInput = styled.input`
+export const SwitchInput = styled.input`
   opacity: 0;
   width: 0;
   height: 0;
@@ -24,7 +24,7 @@ const SwitchInput = styled.input`
   }
 `;
 
-const SwitchSlider = styled.span`
+export const SwitchSlider = styled.span`
   position: absolute;
   top: 0;
   left: 0;
@@ -44,7 +44,7 @@ const SwitchSlider = styled.span`
   }
 `;
 
-const SvgBlock = styled(TypeViewBoxSVG)`
+export const SvgBlock = styled(TypeViewBoxSVG)`
   position: absolute;
   top: 50%;
   left: 20%;
@@ -55,7 +55,7 @@ const SvgBlock = styled(TypeViewBoxSVG)`
   }
 `
 
-const SvgRow = styled(TypeViewRowSVG)`
+export const SvgRow = styled(TypeViewRowSVG)`
   position: absolute;
   top: 50%;
   right: 20%;

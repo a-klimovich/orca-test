@@ -12,7 +12,7 @@ export const ExtandedAdditionalInfo = (props) => {
         {title}
       </TitleStyled>
 
-      <Text breakAll={true}>{content}</Text>
+      <Text wordBreakAll whiteSpaceNormal>{content}</Text>
     </ExtandedAdditionalInfoStyled>
   );
 };
