@@ -3,6 +3,7 @@ import { useState } from "react";
 import Logo from "../../assets/logo.svg";
 import Checkbox from "../Checkbox";
 import Dropdown from "../Dropdown";
+import { Switch } from "../Switch";
 
 import { ReactComponent as GroupSVG } from '../../assets/group-by.svg';
 import { ReactComponent as SortSVG } from '../../assets/sort-by.svg';
@@ -104,7 +105,10 @@ const Header = () => {
           Sort by
         </Dropdown>
 
-        <div>4</div>
+        <Switch 
+          // value={() => true}
+          // onChange={(e) => e.target.value}
+        />
       </WrapperStyled>
     </HeaderStyled>
   );
