@@ -36,12 +36,13 @@ export const Copyable = (props) => {
 
 export const Link = (props) => {
   const { 
-    prefix, 
-    children, 
-    sufix, 
-    maxWidth, 
-    whiteSpaceNormal, 
-    wordBreakAll, 
+    prefix,
+    children,
+    sufix,
+    maxWidth,
+    whiteSpaceNormal,
+    wordBreakAll,
+    paddingTop,
     ...rest
   } = props;
 

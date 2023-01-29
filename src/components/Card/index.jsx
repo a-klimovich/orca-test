@@ -20,6 +20,7 @@ const RowTitleStyled = styled.div`
   & > div {
     padding-top: 4px;
     padding-bottom: 4px;
+    margin-bottom: 8px;
   }
 `
 
@@ -28,6 +29,7 @@ const CardContentWrapper = styled.div`
   flex-wrap: nowrap;
   gap: 32px;
 `
+
 const CardContainer = styled.div`
   display: flex;
   flex-wrap: nowrap;
@@ -68,7 +70,15 @@ export const Card = () => {
           <RowTitleStyled>
             <Copyable sufix>{'38.21.46.43/5'}</Copyable>
             <Copyable sufix maxWidth='198px'>{'2855:93c2:2469:6cde:643b:e139:6aae:6e00'}</Copyable>
-            <Link prefix sufix wordBreakAll whiteSpaceNormal href='https://hello.com'>{'https://dropbox.com/nulla/dapibus.xml'}</Link>
+            <Link 
+              prefix
+              sufix
+              wordBreakAll
+              whiteSpaceNormal
+              href='https://hello.com'
+            >
+              {'https://dropbox.com/nulla/dapibus.xml'}
+            </Link>
           </RowTitleStyled>
         </CardContainer>
       </CardContentWrapper>

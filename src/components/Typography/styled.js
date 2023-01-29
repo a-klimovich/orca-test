@@ -78,7 +78,6 @@ export const CopyableStyled = styled(Base)`
     top: calc(50% + 1px);
     right: 0;
     transform: translateY(-50%);
-    /* background-color: var(--white); */
     padding: 4px 8px;
     vertical-align: middle;
     margin-bottom: -2px;

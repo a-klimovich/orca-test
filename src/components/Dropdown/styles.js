@@ -16,6 +16,7 @@ export const MenuStyled = styled.ul`
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   padding: 4px 0;
+  z-index: 99;
 `
 
 export const MenuItem = styled.li`
