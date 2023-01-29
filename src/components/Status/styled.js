@@ -21,7 +21,7 @@ const sizeStyle = {
   lg: css`
     width: 32px;
     height: 32px;
-    padding: 8;
+    padding: 8px;
   `
 }
 
