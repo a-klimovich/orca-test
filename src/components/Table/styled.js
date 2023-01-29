@@ -21,7 +21,7 @@ export const TableStyled = styled(Table)`
       & > tr {
         border-top: 8px solid var(--bg-gray);
         
-        /* &:not(.rc-table-expanded-row.rc-table-expanded-row-level-1) {
+        &:not(.rc-table-expanded-row.rc-table-expanded-row-level-1) {
           cursor: pointer;
         }
 
@@ -41,7 +41,7 @@ export const TableStyled = styled(Table)`
             color: var(--white);
             border-color: var(--white);
           }
-        } */
+        }
 
         & td ~ & > tr {
           &:hover {
