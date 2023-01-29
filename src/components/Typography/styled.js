@@ -31,7 +31,7 @@ const Base = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}` : "100%")};
+  max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}` : "fit-content")};
 
   ${({ color }) => colors[color]};
 
@@ -72,7 +72,7 @@ export const LinkStyled = styled(Base)`
 export const CopyableStyled = styled(Base)`
   border: 1px solid #cacfdb;
   border-radius: 4px;
-  padding: 4px 20px 4px 8px;
+  padding: 4px 26px 4px 8px;
   position: relative;
 
   button {
@@ -80,7 +80,7 @@ export const CopyableStyled = styled(Base)`
     top: calc(50% + 1px);
     right: 0;
     transform: translateY(-50%);
-    background-color: var(--white);
+    /* background-color: var(--white); */
     padding: 4px 8px;
     vertical-align: middle;
     margin-bottom: -2px;
