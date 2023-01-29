@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "rc-dropdown": "^4.0.1",
     "rc-table": "^7.30.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

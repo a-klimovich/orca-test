@@ -17,3 +17,9 @@ export const WrapperStyled = styled.div`
   align-items: center;
   gap: 16px;
 `
+
+
+export const ButtonSufixStyled = styled.span`
+  display: inline-flex;
+  margin-right: 8px;
+`;
