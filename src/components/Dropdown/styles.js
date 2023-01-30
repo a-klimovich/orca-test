@@ -8,15 +8,15 @@ export const DropdownStyled = styled.div`
 
 export const MenuStyled = styled.ul`
   position: absolute;
-  min-width: 100%;
+  min-width: ${({position}) => position.width + 'px'};
   width: max-content;
-  top: calc(100% + 4px);
-  right: 0;
+  top: ${(props) => ((props.position.top + props.scrollY) - props.position.height + 70) + 'px'};
+  left: ${({position}) => (position.right - position.width) + 'px'};
   background-color: var(--white);
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   padding: 4px 0;
-  z-index: 99;
+  z-index: 9999;
 `
 
 export const MenuItem = styled.li`

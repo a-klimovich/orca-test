@@ -4,6 +4,7 @@ import Table from "rc-table";
 export const TableStyled = styled(Table)`
   table {
     width: 100%;
+    border-spacing: 0px;
 
     thead {
       color: #70707b;
@@ -19,10 +20,16 @@ export const TableStyled = styled(Table)`
 
     tbody {
       & > tr {
+        border: 1px solid var(--gray);
         border-top: 8px solid var(--bg-gray);
         
-        &:not(.rc-table-expanded-row.rc-table-expanded-row-level-1) {
+        &.rc-table-measure-row {
+          display: none;
+        }
+
+        &:not(.rc-table-expanded-row.rc-table-expanded-row-level-1, .rc-table-measure-row) {
           cursor: pointer;
+          position: relative;
         }
 
         &:not(.rc-table-expanded-row.rc-table-expanded-row-level-1):hover {

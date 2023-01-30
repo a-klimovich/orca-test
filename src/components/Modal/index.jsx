@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Modal from "react-modal";
 
+import Button from "../Button";
 import { ReactComponent as Closer } from "../../assets/closer.svg";
 
-import Button from "../Button";
-
 import { ModalHeader, ModalBody, HeaderTitle } from './styles';
+
+Modal.setAppElement('#root');
 
 const reactModalStyles = {
   overlay: {
@@ -49,7 +50,8 @@ export const ReactModal = (props) => {
         Show additional info
       </Button>
 
-      <Modal 
+      
+      <Modal
         isOpen={isOpen} 
         onRequestClose={closeModal}
         style={reactModalStyles}
