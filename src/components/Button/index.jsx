@@ -1,13 +1,10 @@
-import {ButtonStyled} from './styles'
+import { ButtonStyled } from "./styles";
 
 const Button = (props) => {
-  const { onClick, children } = props;
+  const { onClick, children, variant = 'default', alignment } = props;
 
   return (
-    <ButtonStyled 
-      onClick={onClick}
-      type='button'
-    >
+    <ButtonStyled type='button' onClick={onClick} variant={variant} alignment={alignment}>
       {children}
     </ButtonStyled>
   );

@@ -1,90 +1,69 @@
-import { Status } from "../../components/Status";
+import { Status } from "../Status";
+import { ExtandedAdditionalInfo } from "../ExtandedAdditionalInfo";
 import Typography from "../Typography";
-import Button from "../Button";
-import styled from "styled-components";
+import Modal from "../Modal";
+
+import { CardContentWrapperStyles, CardStyles, ContentColumnStyles, CardContainerStyles } from "./styles";
 
 const { Text, Copyable, Link } = Typography;
 
-const CardStyles = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: var(--white);
-  border: 1px solid  var(--bg-gray);
-  border-radius: 4px;
-  padding: 20px 32px;
-`
+export const Card = (props) => {
+  const { status, name, file, ipV4, ipV6, sourceLink, additionalInfo } = props;
 
-const RowTitleStyled = styled.div`
-  margin-right: auto;
-
-  & > div {
-    padding-top: 4px;
-    padding-bottom: 4px;
-    margin-bottom: 8px;
-  }
-`
-
-const CardContentWrapper = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 32px;
-`
-
-const CardContainer = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-
-  ${RowTitleStyled}:first-child {
-    padding-right: 10px;
-  }
-`
-
-export const Card = () => {
   return (
-    <CardStyles>
-      <CardContentWrapper>
-        <CardContainer>
-          <RowTitleStyled>
-            <Text >Risk level:</Text>
-            <Text >Name:</Text>
-            <Text >File name:</Text>
-          </RowTitleStyled>
+    <CardContentWrapperStyles>
+      <CardStyles>
+        <CardContainerStyles>
+          <ContentColumnStyles>
+            <Text>Risk level:</Text>
+            <Text>Name:</Text>
+            <Text>File name:</Text>
+          </ContentColumnStyles>
 
-          <RowTitleStyled>
+          <ContentColumnStyles>
             <Text>
-              <Status status={'Medium'} size='sm' />
-              Medium
+              <Status status={status} size='sm' />
+              {status}
             </Text>
-            <Text>Luctus</Text>
-            <Text sufix={`(${'2Mb'})`}>{"Luctus.ppt"}</Text>
-          </RowTitleStyled>
-        </CardContainer>
+            <Text>{name}</Text>
+            <Text sufix={`(${file.size})`}>{file.name}</Text>
+          </ContentColumnStyles>
+        </CardContainerStyles>
 
-        <CardContainer>
-          <RowTitleStyled>
-            <Text >Risk level:</Text>
-            <Text >Name:</Text>
-            <Text >File name:</Text>
-          </RowTitleStyled>
+        <CardContainerStyles>
+          <ContentColumnStyles>
+            <Text>Risk level:</Text>
+            <Text>Name:</Text>
+            <Text>File name:</Text>
+          </ContentColumnStyles>
 
-          <RowTitleStyled>
-            <Copyable sufix>{'38.21.46.43/5'}</Copyable>
-            <Copyable sufix maxWidth='198px'>{'2855:93c2:2469:6cde:643b:e139:6aae:6e00'}</Copyable>
-            <Link 
-              prefix
-              sufix
-              wordBreakAll
-              whiteSpaceNormal
-              href='https://hello.com'
-            >
-              {'https://dropbox.com/nulla/dapibus.xml'}
+          <ContentColumnStyles>
+            <Copyable sufix>{ipV4}</Copyable>
+            <Copyable sufix maxWidth='198px'>
+              {ipV6}
+            </Copyable>
+            <Link prefix sufix wordBreakAll whiteSpaceNormal href={sourceLink}>
+              {sourceLink}
             </Link>
-          </RowTitleStyled>
-        </CardContainer>
-      </CardContentWrapper>
+          </ContentColumnStyles>
+        </CardContainerStyles>
+      </CardStyles>
 
-      <Button>Show additional info</Button>
-    </CardStyles>
+      <Modal
+        header={
+          <>
+            <Status status={status} variant='modal' size='lg' />
+            {status}
+          </>
+        }>
+        <ExtandedAdditionalInfo
+          title='Additional info:'
+          content={additionalInfo}
+          maxHeight='initial'
+          overflowY='initial'
+        />
+      </Modal>
+    </CardContentWrapperStyles>
   );
 };
 

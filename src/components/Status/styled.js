@@ -25,13 +25,39 @@ const sizeStyle = {
   `
 }
 
+const getStatusStyles = (variant) => ({
+  High: css`
+    ${variant === 'modal' && 'background-color: var(--pink)'};
+    ${variant && 'border-color: var(--pink)'};
+
+    svg path{
+      ${variant === 'modal' && 'fill: var(--white)'};
+    }
+  `,
+  Medium: css`
+    ${variant === 'modal' && 'background-color: var(--orange)'};
+    ${variant && 'border-color: var(--orange)'};
+    svg path{
+      ${variant === 'modal' && 'fill: var(--white)'};
+    }
+  `,
+  Low: css`
+    ${variant === 'modal' && 'background-color: var(--yellow)'};
+    ${variant && 'border-color: var(--yellow)'};
+    svg path{
+      ${variant === 'modal' && 'fill: var(--white)'};
+    }
+  `,
+})
+
 export const StatusStyled = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid ${({variant}) => variant === 'table' ? '#E2005E' : '#CACFDB'};
   border-radius: 4px;
-  background-color: ${({variant}) => variant === 'modal' ? '#E2005E' : 'transparent'};
+  border: 1px solid #CACFDB;
+  background-color: transparent;
 
+  ${({variant, status}) => getStatusStyles(variant)[status]}
   ${({size}) => sizeStyle[size]};
 `;

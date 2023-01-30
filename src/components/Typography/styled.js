@@ -36,6 +36,8 @@ const Base = styled.div`
 
   ${({ color }) => colors[color]};
 
+  margin: ${({margin}) => margin};
+
   span {
     color: var(--gray);
   }

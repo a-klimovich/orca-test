@@ -102,6 +102,7 @@ export const GlobalStyle = createGlobalStyle`
     --gray-dark: #70707B;
 
     --blue: #0080FF;
+    --blue-ligth: #CACFDB;
     --pink: #E2005E;
     --orange: #FE7B1F;
     --yellow: #F8CD39;
@@ -126,6 +127,10 @@ export const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  .ReactModal__Overlay {
+    background-color: var(--dark);
   }
 `;
 

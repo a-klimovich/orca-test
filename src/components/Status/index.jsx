@@ -24,7 +24,7 @@ export const Status = (props) =>  {
   const { status, variant, size } = props;
 
   return (
-    <StatusStyled variant={variant} size={size}>
+    <StatusStyled variant={variant} size={size} status={status}>
       { getCurrentStatusIcon(status) }
     </StatusStyled>
   )

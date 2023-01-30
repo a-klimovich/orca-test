@@ -6,16 +6,19 @@ import { ReactComponent as ArrowSVG } from "../../assets/arrow.svg";
 import { DropdownStyled, MenuStyled, MenuItem, ButtonPrefixStyled } from "./styles";
 
 const Dropdown = (props) => {
-  const { children, list, onClick } = props;
+  const { children, list, onClick, variant } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => setIsOpen(!isOpen);
 
-  const createMenuList = useCallback((arr) => arr.map((el) => <MenuItem>{el.label}</MenuItem>), [list]);
+  const createMenuList = useCallback((arr) => arr?.map((el) => <MenuItem>{el?.label}</MenuItem>), [list]);
 
   return (
     <DropdownStyled onClick={handleOpen}>
-      <Button onClick={onClick}>
+      <Button 
+        variant={variant}
+        onClick={onClick}
+      >
         {children}
         <ButtonPrefixStyled isOpen={isOpen}>
           <ArrowSVG />

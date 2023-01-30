@@ -31,7 +31,6 @@ export const MenuItem = styled.li`
 
 export const ButtonPrefixStyled = styled.span`
   display: inline-flex;
-  margin-left: 8px;
   margin-top: 2px;
 
   svg {
