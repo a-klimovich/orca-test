@@ -1,9 +1,9 @@
-import { TableStyled } from './styles'
+import Table from "rc-table";
 
-const Table = (props) => {
+const CustomTable = (props) => {
   const { columns, data, ...rest } = props;
   return ( 
-    <TableStyled
+    <Table
       columns={columns}
       data={data}
       {...rest}
@@ -11,4 +11,4 @@ const Table = (props) => {
   );
 }
 
-export default Table;
+export default CustomTable;

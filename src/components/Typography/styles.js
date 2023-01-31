@@ -31,6 +31,7 @@ const Base = styled.div`
   text-overflow: ellipsis;
   overflow: hidden;
   max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}` : "fit-content")};
+  padding: 5px 0 5px 0;
 
   ${({ wordBreakAll }) =>
     wordBreakAll
@@ -70,20 +71,20 @@ export const LinkStyled = styled(Base)`
   .prefix {
     display: inline-block;
     padding-right: 4px;
-    padding-top: 1px;
   }
 
   .sufix {
     display: inline-block;
     padding-left: 4px;
-    padding-top: 1px;
   }
 `;
 
 export const CopyableStyled = styled(Base)`
   border: var(--border-default);
   border-radius: var(--radius);
-  padding: 4px 26px 4px 8px;
+  padding: 4px 0 4px 0;
+  padding-right: 26px;
+  padding-left: 8px;
   position: relative;
 `;
 
