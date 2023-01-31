@@ -37,6 +37,12 @@ export const TableStyled = styled(Table)`
 
           td {
             background-color: var(--dark);
+
+            div {
+              position: relative;
+              z-index: 2;
+              cursor: text;
+            }
           }
 
           svg path {
@@ -63,6 +69,9 @@ export const TableStyled = styled(Table)`
       & > tr td {
         padding: 18px 21px;
         background-color: var(--white);
+
+        border-top: var(--border-default);
+        border-bottom: var(--border-default);
 
         &:first-child {
           padding-left: 32px;

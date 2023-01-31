@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 import { ReactComponent as CopySVG } from "../../assets/cmd-c.svg";
 import { ReactComponent as TragetSVG } from "../../assets/target.svg";
 import { ReactComponent as LinkSVG } from "../../assets/link.svg";
@@ -20,10 +22,20 @@ export const Text = (props) => {
 export const Copyable = (props) => {
   const { children, sufix = false, ...rest } = props;
 
+  const copyRef = useRef(null);
+
   const handleTextCtrlC = (value) => navigator.clipboard.writeText(value);
 
+  useEffect(() => {
+    if (copyRef) {
+      copyRef.current.addEventListener("click", (event) => {
+        event.stopPropagation();
+      });
+    }
+  }, []);
+
   return (
-    <CopyableStyled {...rest}>
+    <CopyableStyled ref={copyRef} {...rest}>
       {children}
       {sufix && (
         <ButtonCopyStyled type='button' onClick={() => handleTextCtrlC(children)}>
@@ -37,8 +49,18 @@ export const Copyable = (props) => {
 export const Link = (props) => {
   const { prefix, children, sufix, maxWidth, whiteSpaceNormal, wordBreakAll, paddingTop, ...rest } = props;
 
+  const linkRef = useRef(null);
+
+  useEffect(() => {
+    if (linkRef) {
+      linkRef.current.addEventListener("click", (event) => {
+        event.stopPropagation();
+      });
+    }
+  }, []);
+
   return (
-    <LinkStyled maxWidth={maxWidth} whiteSpaceNormal={whiteSpaceNormal} wordBreakAll={wordBreakAll}>
+    <LinkStyled ref={linkRef} maxWidth={maxWidth} whiteSpaceNormal={whiteSpaceNormal} wordBreakAll={wordBreakAll}>
       {prefix && (
         <span className='prefix'>
           <TragetSVG />
