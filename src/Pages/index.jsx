@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import TableModule from "../modules/Table";
 import CardsModule from "../modules/Cards";
 
+import { data } from "../__mockdata";
+
 const TestModule = () => {
   const [isRow, setIsRow] = useState(false);
 
@@ -12,7 +14,7 @@ const TestModule = () => {
   return (
     <>
       <Header handleChange={handleChange} />
-      {isRow ? <TableModule /> : <CardsModule />}
+      {isRow ? <TableModule data={data} /> : <CardsModule data={data} />}
     </>
   );
 };

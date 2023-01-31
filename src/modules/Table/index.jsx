@@ -3,8 +3,6 @@ import Typography from "../../components/Typography";
 import { Status } from "../../components/Status";
 import { ExtandedAdditionalInfo } from "../../components/ExtandedAdditionalInfo";
 
-import { data } from "../../__mockdata";
-
 const { Copyable, Link, Text } = Typography;
 
 export const columns = [
@@ -47,7 +45,9 @@ export const columns = [
   },
 ];
 
-const TableModule = () => {
+const TableModule = (props) => {
+  const {data} = props;
+
   return (
     <Table
       data={data}

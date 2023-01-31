@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 import Card from "../../components/Card";
 
-import { data } from "../../__mockdata";
-
 const GridStyled = styled.div`
   display: grid;
   grid-template-columns: repeat(2, calc((100% / 2) - (32px / 2)));
@@ -11,7 +9,9 @@ const GridStyled = styled.div`
   gap: 32px;
 `;
 
-const CardsModule = () => {
+const CardsModule = (props) => {
+  const {data} = props;
+
   return (
     <GridStyled>
       {data.map((el) => (
