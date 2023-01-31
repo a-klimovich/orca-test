@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const CheckboxContainer = styled.div`
+export const CheckboxContainerStyled = styled.div`
   display: inline-block;
   vertical-align: middle;
 `;
 
-export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
+export const HiddenCheckboxStyled = styled.input.attrs({ type: "checkbox" })`
   border: 0;
   clip: rect(0 0 0 0);
   clippath: inset(50%);
@@ -18,14 +18,14 @@ export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
   width: 1px;
 `;
 
-export const StyledCheckbox = styled.div`
+export const CheckboxStyled = styled.div`
   display: inline-flex;
   position: relative;
   width: 12px;
   height: 12px;
-  background: ${props => (props.checked ? 'var(--blue)' : 'var(--white)')};
+  background: ${(props) => (props.checked ? "var(--blue)" : "var(--white)")};
   border-radius: 2px;
-  border: 1px solid ${props => (props.checked ? 'var(--blue)' : 'var(--gray-dark)')};
+  border: 1px solid ${(props) => (props.checked ? "var(--blue)" : "var(--gray-dark)")};
   transition: all 150ms;
 
   svg {
@@ -40,7 +40,7 @@ export const StyledCheckbox = styled.div`
 export const LabelStyled = styled.label`
   cursor: pointer;
 
-  &:hover ${ StyledCheckbox } {
+  &:hover ${CheckboxStyled} {
     border-color: var(--blue);
   }
-`
+`;

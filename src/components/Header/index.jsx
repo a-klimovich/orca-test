@@ -1,16 +1,16 @@
 // import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { useState } from "react";
-import { ReactComponent as Logo } from "../../assets/logo.svg";
 import Checkbox from "../Checkbox";
 import Dropdown from "../Dropdown";
 import { Switch } from "../Switch";
 
-import { dropdownList } from "../../__mockdata";
-
+import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { ReactComponent as GroupSVG } from "../../assets/group-by.svg";
 import { ReactComponent as SortSVG } from "../../assets/sort-by.svg";
 
-import { HeaderStyled, WrapperStyled, ButtonSufixStyled } from "./styled";
+import { dropdownList } from "../../__mockdata";
+
+import { HeaderStyled, WrapperStyled, ButtonSufixStyled } from "./styles";
 
 const Header = (props) => {
   const { handleChange } = props;
@@ -19,7 +19,7 @@ const Header = (props) => {
 
   return (
     <HeaderStyled>
-      <a href="#">
+      <a href='#'>
         <Logo />
       </a>
 

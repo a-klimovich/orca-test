@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardContentWrapperStyles = styled.div`
+export const CardContentWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
   background-color: var(--white);
@@ -9,13 +9,13 @@ export const CardContentWrapperStyles = styled.div`
   padding: 20px 32px;
 `;
 
-export const CardStyles = styled.div`
+export const CardStyled = styled.div`
   display: flex;
   flex-wrap: nowrap;
   gap: 32px;
 `;
 
-export const ContentColumnStyles = styled.div`
+export const ContentColumnStyled = styled.div`
   margin-right: auto;
 
   & > div {
@@ -31,11 +31,11 @@ export const ContentColumnStyles = styled.div`
   }
 `;
 
-export const CardContainerStyles = styled.div`
+export const CardContainerStyled = styled.div`
   display: flex;
   flex-wrap: nowrap;
 
-  ${ContentColumnStyles}:first-child {
+  ${ContentColumnStyled}:first-child {
     padding-right: 10px;
   }
 `;

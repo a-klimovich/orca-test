@@ -3,7 +3,7 @@ import { ExtandedAdditionalInfo } from "../ExtandedAdditionalInfo";
 import Typography from "../Typography";
 import Modal from "../Modal";
 
-import { CardContentWrapperStyles, CardStyles, ContentColumnStyles, CardContainerStyles } from "./styles";
+import { CardContentWrapperStyled, CardStyled, ContentColumnStyled, CardContainerStyled } from "./styles";
 
 const { Text, Copyable, Link } = Typography;
 
@@ -11,33 +11,33 @@ export const Card = (props) => {
   const { status, name, file, ipV4, ipV6, sourceLink, additionalInfo } = props;
 
   return (
-    <CardContentWrapperStyles>
-      <CardStyles>
-        <CardContainerStyles>
-          <ContentColumnStyles>
+    <CardContentWrapperStyled>
+      <CardStyled>
+        <CardContainerStyled>
+          <ContentColumnStyled>
             <Text>Risk level:</Text>
             <Text>Name:</Text>
             <Text>File name:</Text>
-          </ContentColumnStyles>
+          </ContentColumnStyled>
 
-          <ContentColumnStyles>
+          <ContentColumnStyled>
             <Text>
               <Status status={status} size='sm' />
               {status}
             </Text>
             <Text>{name}</Text>
             <Text sufix={`(${file.size})`}>{file.name}</Text>
-          </ContentColumnStyles>
-        </CardContainerStyles>
+          </ContentColumnStyled>
+        </CardContainerStyled>
 
-        <CardContainerStyles>
-          <ContentColumnStyles>
+        <CardContainerStyled>
+          <ContentColumnStyled>
             <Text>Risk level:</Text>
             <Text>Name:</Text>
             <Text>File name:</Text>
-          </ContentColumnStyles>
+          </ContentColumnStyled>
 
-          <ContentColumnStyles>
+          <ContentColumnStyled>
             <Copyable sufix>{ipV4}</Copyable>
             <Copyable sufix maxWidth='198px'>
               {ipV6}
@@ -45,9 +45,9 @@ export const Card = (props) => {
             <Link prefix sufix wordBreakAll whiteSpaceNormal href={sourceLink}>
               {sourceLink}
             </Link>
-          </ContentColumnStyles>
-        </CardContainerStyles>
-      </CardStyles>
+          </ContentColumnStyled>
+        </CardContainerStyled>
+      </CardStyled>
 
       <Modal
         header={
@@ -64,7 +64,7 @@ export const Card = (props) => {
           isModalFooter
         />
       </Modal>
-    </CardContentWrapperStyles>
+    </CardContentWrapperStyled>
   );
 };
 

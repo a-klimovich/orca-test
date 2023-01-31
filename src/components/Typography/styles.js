@@ -32,19 +32,22 @@ const Base = styled.div`
   overflow: hidden;
   max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}` : "fit-content")};
 
-  ${({wordBreakAll}) => wordBreakAll ? css`
-    hyphens: auto;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  ` : css`
-    word-break: normal;
-  `}
-  
+  ${({ wordBreakAll }) =>
+    wordBreakAll
+      ? css`
+          hyphens: auto;
+          overflow-wrap: anywhere;
+          word-break: break-word;
+        `
+      : css`
+          word-break: normal;
+        `}
+
   white-space: ${({ whiteSpaceNormal }) => (whiteSpaceNormal ? "normal" : "nowrap")};
 
   ${({ color }) => colors[color]};
 
-  margin: ${({margin}) => margin};
+  margin: ${({ margin }) => margin};
 
   span {
     color: var(--gray);
@@ -82,18 +85,18 @@ export const CopyableStyled = styled(Base)`
   border-radius: 4px;
   padding: 4px 26px 4px 8px;
   position: relative;
+`;
 
-  button {
-    position: absolute;
-    top: calc(50% + 1px);
-    right: 0;
-    transform: translateY(-50%);
-    padding: 4px 8px;
-    vertical-align: middle;
-    margin-bottom: -2px;
+export const ButtonCopyStyled = styled.button`
+  position: absolute;
+  top: calc(50% + 1px);
+  right: 0;
+  transform: translateY(-50%);
+  padding: 4px 8px;
+  vertical-align: middle;
+  margin-bottom: -2px;
 
-    &:hover svg path {
-      fill: var(--blue);
-    }
+  &:hover svg path {
+    fill: var(--blue);
   }
 `;

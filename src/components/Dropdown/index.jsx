@@ -4,8 +4,7 @@ import { createPortal } from "react-dom";
 import Button from "../Button";
 import { ReactComponent as ArrowSVG } from "../../assets/arrow.svg";
 
-import { DropdownStyled, MenuStyled, MenuItem, ButtonPrefixStyled } from "./styles";
-
+import { DropdownStyled, MenuStyled, MenuItemStyled, ButtonPrefixStyled } from "./styles";
 
 const initClientRect = {
   bottom: 0,
@@ -16,7 +15,7 @@ const initClientRect = {
   width: 0,
   x: 0,
   y: 0,
-}
+};
 
 const Dropdown = (props) => {
   const { children, list, variant, isFixed = false } = props;
@@ -32,47 +31,41 @@ const Dropdown = (props) => {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleWindowScroll);
+    window.addEventListener("scroll", handleWindowScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleWindowScroll);
+      window.removeEventListener("scroll", handleWindowScroll);
     };
   }, []);
 
   const handleOpen = () => {
     setButtonPosition(buttonRef.current.getBoundingClientRect());
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
   };
 
-  const createMenuList = useCallback((arr) => {
-    return isOpen && createPortal(
-      <MenuStyled
-        position={buttonPosition}
-        scrollY={scrollY}
-        isFixed={isFixed}
-      >
-        {arr?.map((el) => <MenuItem key={el.label}>{el?.label}</MenuItem>)}
-      </MenuStyled>, document.body
-    )
-  }, [list, buttonPosition]);
+  const createMenuList = useCallback(
+    (arr) => (
+      isOpen &&
+      createPortal(
+        <MenuStyled position={buttonPosition} scrollY={scrollY} isFixed={isFixed}>
+          {arr?.map((el) => (
+            <MenuItemStyled key={el.label}>{el?.label}</MenuItemStyled>
+          ))}
+        </MenuStyled>,
+        document.body
+      )
+    ), [list, buttonPosition]);
 
   return (
-    <DropdownStyled 
-      onClick={handleOpen}
-    >
-      <Button 
-        variant={variant}
-        buttonRef={buttonRef}
-      >
+    <DropdownStyled onClick={handleOpen}>
+      <Button variant={variant} buttonRef={buttonRef}>
         {children}
         <ButtonPrefixStyled isOpen={isOpen}>
           <ArrowSVG />
         </ButtonPrefixStyled>
       </Button>
 
-      {
-        createMenuList(list)
-      }
+      {createMenuList(list)}
 
       {isOpen && <div className='overlay' />}
     </DropdownStyled>

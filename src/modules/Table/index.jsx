@@ -46,7 +46,7 @@ export const columns = [
 ];
 
 const TableModule = (props) => {
-  const {data} = props;
+  const { data } = props;
 
   return (
     <Table

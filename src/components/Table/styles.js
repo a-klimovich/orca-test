@@ -7,7 +7,7 @@ export const TableStyled = styled(Table)`
     border-spacing: 0px;
 
     thead {
-      color: #70707b;
+      color: var(--gray-dark);
 
       & > tr > th {
         padding: 18px 21px 4px 21px;
@@ -50,12 +50,6 @@ export const TableStyled = styled(Table)`
           }
         }
 
-        & td ~ & > tr {
-          &:hover {
-            cursor: pointer;
-          }
-        }
-
         &.rc-table-expanded-row.rc-table-expanded-row-level-1 {
           border-top-width: 0;
 
@@ -72,10 +66,6 @@ export const TableStyled = styled(Table)`
 
         &:first-child {
           padding-left: 32px;
-        }
-
-        & ~ tr {
-          color: red !important;
         }
       }
     }

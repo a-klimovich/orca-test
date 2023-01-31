@@ -10,7 +10,7 @@ const GridStyled = styled.div`
 `;
 
 const CardsModule = (props) => {
-  const {data} = props;
+  const { data } = props;
 
   return (
     <GridStyled>

@@ -1,8 +1,8 @@
-import { TextStyled, LinkStyled, CopyableStyled } from "./styled";
-
 import { ReactComponent as CopySVG } from "../../assets/cmd-c.svg";
 import { ReactComponent as TragetSVG } from "../../assets/target.svg";
 import { ReactComponent as LinkSVG } from "../../assets/link.svg";
+
+import { TextStyled, LinkStyled, CopyableStyled, ButtonCopyStyled } from "./styles";
 
 export const Typography = {};
 
@@ -26,32 +26,19 @@ export const Copyable = (props) => {
     <CopyableStyled {...rest}>
       {children}
       {sufix && (
-        <button type='button' onClick={() => handleTextCtrlC(children)}>
+        <ButtonCopyStyled type='button' onClick={() => handleTextCtrlC(children)}>
           <CopySVG />
-        </button>
+        </ButtonCopyStyled>
       )}
     </CopyableStyled>
   );
 };
 
 export const Link = (props) => {
-  const { 
-    prefix,
-    children,
-    sufix,
-    maxWidth,
-    whiteSpaceNormal,
-    wordBreakAll,
-    paddingTop,
-    ...rest
-  } = props;
+  const { prefix, children, sufix, maxWidth, whiteSpaceNormal, wordBreakAll, paddingTop, ...rest } = props;
 
   return (
-    <LinkStyled 
-      maxWidth={maxWidth} 
-      whiteSpaceNormal={whiteSpaceNormal} 
-      wordBreakAll={wordBreakAll}
-    >
+    <LinkStyled maxWidth={maxWidth} whiteSpaceNormal={whiteSpaceNormal} wordBreakAll={wordBreakAll}>
       {prefix && (
         <span className='prefix'>
           <TragetSVG />

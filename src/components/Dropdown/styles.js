@@ -19,7 +19,7 @@ export const MenuStyled = styled.ul`
   z-index: 9999;
 `
 
-export const MenuItem = styled.li`
+export const MenuItemStyled = styled.li`
   padding: 4px 16px;
 
   &:hover {

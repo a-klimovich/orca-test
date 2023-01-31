@@ -16,4 +16,4 @@ export const FooterStyled = styled.div`
   margin-left: auto;
   width: fit-content;
   gap: 30px;
-`
+`;

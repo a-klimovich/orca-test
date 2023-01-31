@@ -5,7 +5,7 @@ import Button from "../Button";
 import { ReactComponent as DownloadSVG } from "../../assets/download.svg";
 import { dropdownList } from "../../__mockdata";
 
-import { ExtandedAdditionalInfoStyled, TitleStyled, FooterStyled } from "./styled";
+import { ExtandedAdditionalInfoStyled, TitleStyled, FooterStyled } from "./styles";
 
 const { Text } = Typography;
 

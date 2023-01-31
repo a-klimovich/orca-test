@@ -1,4 +1,4 @@
-import { TableStyled } from './styled'
+import { TableStyled } from './styles'
 
 const Table = (props) => {
   const { columns, data, ...rest } = props;

@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 const btnVariant = {
   blue: css`
@@ -7,9 +7,9 @@ const btnVariant = {
     border-color: transparent;
 
     &:hover {
-      border-color: var(--blue-ligth);
+      border-color: var(--gray);
 
-      svg path{
+      svg path {
         fill: var(--white);
       }
     }
@@ -21,12 +21,13 @@ const btnVariant = {
 
     &:hover {
       border-color: var(--blue);
+      color: var(--blue);
 
-      svg path{
+      svg path {
         fill: var(--blue);
       }
     }
-  `
+  `,
 };
 
 const btnAlignment = {
@@ -44,7 +45,7 @@ const btnAlignment = {
     margin: 0 auto;
     align-self: center;
   `,
-}
+};
 
 export const ButtonStyled = styled.button`
   display: flex;
@@ -58,12 +59,12 @@ export const ButtonStyled = styled.button`
   padding: 6px 8px;
   max-width: fit-content;
 
-  &, svg path {
+  &,
+  svg path {
     transition: all 0.373s;
   }
 
-  ${({variant}) => (btnVariant[variant])};
+  ${({ variant }) => btnVariant[variant]};
 
-  ${({alignment}) => (btnAlignment[alignment])};
+  ${({ alignment }) => btnAlignment[alignment]};
 `;
-
