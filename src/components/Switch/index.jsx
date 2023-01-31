@@ -2,16 +2,18 @@ import React, { useState } from "react";
 
 import { SwitchContainer, SwitchInput, SwitchSlider, SvgBlock, SvgRow } from "./styles";
 
-export const Switch = ({ value }) => {
-  const [isViewChanged, setIsViewChanged] = useState(true);
+export const Switch = (props) => {
+  const {onChange} = props;
+  const [isViewChanged, setIsViewChanged] = useState(false);
 
-  const handleChange = () => {
-    setIsViewChanged(!isViewChanged);
+  const handleChange = (val) => {
+    setIsViewChanged(val);
+    onChange(val)
   };
 
   return (
     <SwitchContainer>
-      <SwitchInput type='checkbox' value={value} onChange={handleChange} checked={isViewChanged} />
+      <SwitchInput type='checkbox' onChange={() => handleChange(!isViewChanged)} checked={isViewChanged} />
       <SwitchSlider className='slider' />
 
       <SvgBlock checked={isViewChanged} />

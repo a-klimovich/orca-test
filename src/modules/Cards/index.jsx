@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import Header from "../../components/Header";
 import Card from "../../components/Card";
 
 import { data } from "../../__mockdata";
@@ -14,14 +13,11 @@ const GridStyled = styled.div`
 
 const CardsModule = () => {
   return (
-    <>
-      <Header />
-      <GridStyled>
-        {
-          data.map((el) => (<Card key={el.value} {...el}/>)) 
-        }
-      </GridStyled>
-    </>
+    <GridStyled>
+      {data.map((el) => (
+        <Card key={el.value} {...el} />
+      ))}
+    </GridStyled>
   );
 };
 

@@ -1,10 +1,9 @@
-import Header from "../../components/Header";
 import Table from "../../components/Table";
 import Typography from "../../components/Typography";
 import { Status } from "../../components/Status";
 import { ExtandedAdditionalInfo } from "../../components/ExtandedAdditionalInfo";
 
-import { data } from '../../__mockdata';
+import { data } from "../../__mockdata";
 
 const { Copyable, Link, Text } = Typography;
 
@@ -50,26 +49,19 @@ export const columns = [
 
 const TableModule = () => {
   return (
-    <>
-      <Header />
-      <Table
-        data={data}
-        columns={columns}
-        tableLayout='auto'
-        expandable={{
-          expandRowByClick: true,
-          expandedRowRender: (record) => (
-            <ExtandedAdditionalInfo
-              title='Additional info:'
-              content={record.additionalInfo}
-              overflowY='auto'
-            />
-          ),
-          expandIcon: ({ record }) => <Status status={record.status} variant='table' size='md' />,
-        }}
-        scroll={{ x: 1000 }}
-      />
-    </>
+    <Table
+      data={data}
+      columns={columns}
+      tableLayout='auto'
+      expandable={{
+        expandRowByClick: true,
+        expandedRowRender: (record) => (
+          <ExtandedAdditionalInfo title='Additional info:' content={record.additionalInfo} overflowY='auto' />
+        ),
+        expandIcon: ({ record }) => <Status status={record.status} variant='table' size='md' />,
+      }}
+      scroll={{ x: 1000 }}
+    />
   );
 };
 

@@ -1,23 +1,14 @@
 import { GlobalStyle, Container, Screen } from "./styles/global"
 
-import TableModule from "./modules/Table"
-import CardsModule from "./modules/Cards"
-
+import TestModule from './Pages'
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Screen>
-        <Container>
-          <TableModule />
-        </Container>
-      </Screen>
-      <Screen>
-        <Container>
-          <CardsModule />
-        </Container>
-      </Screen>
+      <Container>
+        <TestModule />
+      </Container>
     </>
   );
 }
