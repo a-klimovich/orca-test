@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "react-modal";
 
 import Button from "../Button";
+
 import { ReactComponent as Closer } from "../../assets/closer.svg";
 
 import { ModalHeader, ModalBody, HeaderTitle } from './styles';

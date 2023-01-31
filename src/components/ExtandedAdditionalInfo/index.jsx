@@ -3,19 +3,14 @@ import Dropdown from "../Dropdown";
 import Button from "../Button";
 
 import { ReactComponent as DownloadSVG } from "../../assets/download.svg";
-
 import { dropdownList } from "../../__mockdata";
+
 import { ExtandedAdditionalInfoStyled, TitleStyled, FooterStyled } from "./styled";
 
 const { Text } = Typography;
 
 export const ExtandedAdditionalInfo = (props) => {
-  const {
-    title,
-    content,
-    maxHeight,
-    overflowY,
-  } = props;
+  const { title, content, maxHeight, overflowY, isModalFooter } = props;
 
   return (
     <ExtandedAdditionalInfoStyled maxHeight={maxHeight} overflowY={overflowY}>
@@ -26,21 +21,20 @@ export const ExtandedAdditionalInfo = (props) => {
       </Text>
 
       <FooterStyled>
-        <Button variant='blue' onClick={() => console.log('hendleDownload')}>
+        <Button variant='blue' onClick={() => console.log("hendleDownload")}>
           Download
         </Button>
 
-        <Dropdown 
-          isFixed={true} 
-          variant='blue' 
-          list={dropdownList.download} 
-          onClick={() => console.log('hendleDownloadAs')}
-        >
-          <DownloadSVG /> 
+        <Dropdown
+          isFixed={true}
+          variant='blue'
+          list={dropdownList.download}
+          onClick={() => console.log("hendleDownloadAs")}>
+          <DownloadSVG />
           Download as
         </Dropdown>
 
-        <Button onClick={() => console.log('hendleCancel')}>Cancel</Button>
+        {isModalFooter && <Button onClick={() => console.log("hendleCancel")}>Cancel</Button>}
       </FooterStyled>
     </ExtandedAdditionalInfoStyled>
   );

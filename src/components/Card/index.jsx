@@ -61,6 +61,7 @@ export const Card = (props) => {
           content={additionalInfo}
           maxHeight='initial'
           overflowY='initial'
+          isModalFooter
         />
       </Modal>
     </CardContentWrapperStyles>

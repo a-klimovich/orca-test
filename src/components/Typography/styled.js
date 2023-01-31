@@ -31,7 +31,15 @@ const Base = styled.div`
   text-overflow: ellipsis;
   overflow: hidden;
   max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}` : "fit-content")};
-  word-break: ${({ wordBreakAll }) => (wordBreakAll ? "break-all" : "normal")};
+
+  ${({wordBreakAll}) => wordBreakAll ? css`
+    hyphens: auto;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  ` : css`
+    word-break: normal;
+  `}
+  
   white-space: ${({ whiteSpaceNormal }) => (whiteSpaceNormal ? "normal" : "nowrap")};
 
   ${({ color }) => colors[color]};
