@@ -19,7 +19,7 @@ const initClientRect = {
 }
 
 const Dropdown = (props) => {
-  const { children, list, variant } = props;
+  const { children, list, variant, isFixed = false } = props;
 
   const [isOpen, setIsOpen] = useState(false);
   const [buttonPosition, setButtonPosition] = useState(initClientRect);
@@ -49,6 +49,7 @@ const Dropdown = (props) => {
       <MenuStyled
         position={buttonPosition}
         scrollY={scrollY}
+        isFixed={isFixed}
       >
         {arr?.map((el) => <MenuItem key={el.label}>{el?.label}</MenuItem>)}
       </MenuStyled>, document.body
@@ -56,7 +57,9 @@ const Dropdown = (props) => {
   }, [list, buttonPosition]);
 
   return (
-    <DropdownStyled onClick={handleOpen}>
+    <DropdownStyled 
+      onClick={handleOpen}
+    >
       <Button 
         variant={variant}
         buttonRef={buttonRef}

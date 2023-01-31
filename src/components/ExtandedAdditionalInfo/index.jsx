@@ -15,7 +15,6 @@ export const ExtandedAdditionalInfo = (props) => {
     content,
     maxHeight,
     overflowY,
-    footer
   } = props;
 
   return (
@@ -31,8 +30,14 @@ export const ExtandedAdditionalInfo = (props) => {
           Download
         </Button>
 
-        <Dropdown variant='blue' list={dropdownList.download} onClick={() => console.log('hendleDownloadAs')}>
-          <DownloadSVG /> Download as
+        <Dropdown 
+          isFixed={true} 
+          variant='blue' 
+          list={dropdownList.download} 
+          onClick={() => console.log('hendleDownloadAs')}
+        >
+          <DownloadSVG /> 
+          Download as
         </Dropdown>
 
         <Button onClick={() => console.log('hendleCancel')}>Cancel</Button>

@@ -7,7 +7,7 @@ export const DropdownStyled = styled.div`
 `
 
 export const MenuStyled = styled.ul`
-  position: absolute;
+  position: ${({isFixed}) => isFixed ? 'fixed' : 'absolute'};
   min-width: ${({position}) => position.width + 'px'};
   width: max-content;
   top: ${(props) => ((props.position.top + props.scrollY) - props.position.height + 70) + 'px'};
