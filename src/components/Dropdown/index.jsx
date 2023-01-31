@@ -24,6 +24,7 @@ const Dropdown = (props) => {
   const [buttonPosition, setButtonPosition] = useState(initClientRect);
   const [scrollY, setScrollY] = useState(0);
 
+  // TODO: add handler on outside click close dropdown menu
   const buttonRef = useRef();
 
   useEffect(() => {
