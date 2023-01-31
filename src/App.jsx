@@ -1,4 +1,4 @@
-import { GlobalStyle, Container, Screen } from "./styles/global"
+import { GlobalStyle, Container } from "./styles/global"
 
 import TestModule from './Pages'
 

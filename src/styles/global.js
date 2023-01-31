@@ -132,10 +132,6 @@ export const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
-
-  .ReactModal__Overlay {
-    background-color: var(--dark);
-  }
 `;
 
 export const Container = styled.div`
@@ -144,11 +140,4 @@ export const Container = styled.div`
   max-width: 100%;
   padding: 0 8px;
   margin: 0 auto;
-`
-
-export const Screen = styled.div`
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
-  height: 100%;
 `
