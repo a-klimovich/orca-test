@@ -9,8 +9,8 @@ export const SwitchContainerStyled = styled.label`
   width: 60px;
   height: 30px;
   background: var(--white);
-  border: 1px solid var(--gray);
-  border-radius: 4px;
+  border: var(--border-default);
+  border-radius: var(--radius);
   cursor: pointer;
 `;
 
@@ -29,7 +29,7 @@ export const SwitchSliderStyled = styled.span`
     left: 1px;
     bottom: 1px;
     background-color: var(--blue);
-    border-radius: 2px;
+    border-radius: var(--radius-sm);
     transition: 0.4s;
   }
 `;

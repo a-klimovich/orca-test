@@ -24,7 +24,7 @@ export const CheckboxStyled = styled.div`
   width: 12px;
   height: 12px;
   background: ${(props) => (props.checked ? "var(--blue)" : "var(--white)")};
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   border: 1px solid ${(props) => (props.checked ? "var(--blue)" : "var(--gray-dark)")};
   transition: all 150ms;
 

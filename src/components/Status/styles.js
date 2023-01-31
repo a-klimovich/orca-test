@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components"
+import styled, { css } from "styled-components";
 
 const sizeStyle = {
   sm: css`
@@ -22,42 +22,42 @@ const sizeStyle = {
     width: 32px;
     height: 32px;
     padding: 8px;
-  `
-}
+  `,
+};
 
 const getStatusStyles = (variant) => ({
   High: css`
-    ${variant === 'modal' && 'background-color: var(--pink)'};
-    ${variant && 'border-color: var(--pink)'};
+    ${variant === "modal" && "background-color: var(--pink)"};
+    ${variant && "border-color: var(--pink)"};
 
-    svg path{
-      ${variant === 'modal' && 'fill: var(--white)'};
+    svg path {
+      ${variant === "modal" && "fill: var(--white)"};
     }
   `,
   Medium: css`
-    ${variant === 'modal' && 'background-color: var(--orange)'};
-    ${variant && 'border-color: var(--orange)'};
-    svg path{
-      ${variant === 'modal' && 'fill: var(--white)'};
+    ${variant === "modal" && "background-color: var(--orange)"};
+    ${variant && "border-color: var(--orange)"};
+    svg path {
+      ${variant === "modal" && "fill: var(--white)"};
     }
   `,
   Low: css`
-    ${variant === 'modal' && 'background-color: var(--yellow)'};
-    ${variant && 'border-color: var(--yellow)'};
-    svg path{
-      ${variant === 'modal' && 'fill: var(--white)'};
+    ${variant === "modal" && "background-color: var(--yellow)"};
+    ${variant && "border-color: var(--yellow)"};
+    svg path {
+      ${variant === "modal" && "fill: var(--white)"};
     }
   `,
-})
+});
 
 export const StatusStyled = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  border: 1px solid #CACFDB;
+  border-radius: var(--radius);
+  border: var(--border-default);
   background-color: transparent;
 
-  ${({variant, status}) => getStatusStyles(variant)[status]}
-  ${({size}) => sizeStyle[size]};
+  ${({ variant, status }) => getStatusStyles(variant)[status]}
+  ${({ size }) => sizeStyle[size]};
 `;

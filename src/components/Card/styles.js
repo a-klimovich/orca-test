@@ -5,7 +5,7 @@ export const CardContentWrapperStyled = styled.div`
   flex-direction: column;
   background-color: var(--white);
   border: 1px solid var(--bg-gray);
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: 20px 32px;
 `;
 

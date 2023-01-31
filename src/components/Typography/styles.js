@@ -81,8 +81,8 @@ export const LinkStyled = styled(Base)`
 `;
 
 export const CopyableStyled = styled(Base)`
-  border: 1px solid #cacfdb;
-  border-radius: 4px;
+  border: var(--border-default);
+  border-radius: var(--radius);
   padding: 4px 26px 4px 8px;
   position: relative;
 `;

@@ -20,7 +20,7 @@ export const TableStyled = styled(Table)`
 
     tbody {
       & > tr {
-        border: 1px solid var(--gray);
+        border: var(--border-default);
         border-top: 8px solid var(--bg-gray);
         
         &.rc-table-measure-row {

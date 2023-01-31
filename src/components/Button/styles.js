@@ -54,7 +54,7 @@ export const ButtonStyled = styled.button`
 
   border-width: 1px;
   border-style: solid;
-  border-radius: 4px;
+  border-radius: var(--radius);
 
   padding: 6px 8px;
   max-width: fit-content;

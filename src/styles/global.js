@@ -105,6 +105,11 @@ export const GlobalStyle = createGlobalStyle`
     --pink: #E2005E;
     --orange: #FE7B1F;
     --yellow: #F8CD39;
+
+    --border-default: 1px solid var(--gray);
+
+    --radius: 4px;
+    --radius-sm: 2px;
   }
 
   #root {

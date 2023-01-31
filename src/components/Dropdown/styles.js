@@ -14,7 +14,7 @@ export const MenuStyled = styled.ul`
   left: ${({position}) => (position.right - position.width) + 'px'};
   background-color: var(--white);
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   padding: 4px 0;
   z-index: 9999;
 `
